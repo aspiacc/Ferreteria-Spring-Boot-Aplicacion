@@ -41,15 +41,15 @@ public class User implements Serializable {
 	private String confirmPassword;
 
 	@ManyToMany(fetch = FetchType.LAZY)
-	@JoinTable(name = "user_roles", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "role_id"))
+	@JoinTable(name="user_roles"
+		,joinColumns=@JoinColumn(name="user_id")
+		,inverseJoinColumns=@JoinColumn(name="role_id"))
 	private Set<Role> roles;
-
-	public User() {
-	}
-
+	
+	public User() {	}
+	
 	public User(Long id) {
 		this.id = id;
-
 	}
 
 	public Long getId() {
@@ -108,11 +108,11 @@ public class User implements Serializable {
 		this.confirmPassword = confirmPassword;
 	}
 
-	public Set<Role> getRoles() {
+	public Set getRoles() {
 		return roles;
 	}
 
-	public void setRoles(Set<Role> roles) {
+	public void setRoles(Set roles) {
 		this.roles = roles;
 	}
 
@@ -188,7 +188,9 @@ public class User implements Serializable {
 		} else if (!username.equals(other.username))
 			return false;
 		return true;
-	}
+	}    
+	
+	
 	
 	
 }
