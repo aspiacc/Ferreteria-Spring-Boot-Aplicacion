@@ -27,11 +27,11 @@ public class TipoIVA implements Serializable {
 	@Column
 	private float alicuota;
 	
-	@OneToMany(mappedBy="tipoiva")
+	@OneToMany(mappedBy="tipoIVA")
 	private Set <Producto> producto;
 
-	
 	//GETTERS & SETTERS
+	
 	public Long getTipoiva_id() {
 		return tipoiva_id;
 	}

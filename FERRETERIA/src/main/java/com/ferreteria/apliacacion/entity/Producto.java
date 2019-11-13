@@ -24,15 +24,13 @@ public class Producto implements Serializable {
 	
 	@Column
 	private int stock;
-	
 	@Column
 	private String descripcion;
-	
 	@Column
 	private float precioUnitario;
 	
 	@ManyToOne
-	@JoinColumn(name="id_tipoiva", nullable=false)
+	@JoinColumn(name="tipoiva_id", nullable=false)
 	private TipoIVA tipoIVA;
 
 	//CONSTRUCTOR VACIO
@@ -41,6 +39,7 @@ public class Producto implements Serializable {
 	}
 
 	//GETTERS & SETTERS
+	
 	public Long getProducto_id() {
 		return producto_id;
 	}
